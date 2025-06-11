@@ -104,7 +104,7 @@ export default function ProductList({
           </span>
           {searchQuery && (
             <span className="text-blue-600 text-sm">
-              Filtrando por: "{searchQuery}"
+              Filtrando por: &quot;{searchQuery}&quot;
             </span>
           )}
         </div>

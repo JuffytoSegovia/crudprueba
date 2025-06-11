@@ -5,6 +5,7 @@
 import { useState } from 'react'
 import { formatFileSize, getFileTypeInfo } from '../../lib/constants/fileTypes'
 import Button from '../ui/Button'
+import Image from 'next/image'
 
 export default function FileList({ files, onDelete, loading = false }) {
   const [deletingId, setDeletingId] = useState(null)
@@ -65,9 +66,11 @@ export default function FileList({ files, onDelete, loading = false }) {
               {/* Preview o icono */}
               <div className="flex-shrink-0">
                 {isImage ? (
-                  <img
+                  <Image
                     src={file.public_url}
                     alt={file.original_name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 object-cover rounded border"
                     onError={(e) => {
                       e.target.style.display = 'none'
